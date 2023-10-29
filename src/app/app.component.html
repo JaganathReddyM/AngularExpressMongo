@@ -1,0 +1,63 @@
+<!---
+<h1 style="background-color: aquamarine;">Angular Express</h1>
+<b>Enter user's data</b><br>
+<form #userData="ngForm" (ngSubmit) = 'addUser(userData)'>
+  User Id <input type="text" name="userId" ngModel/><br>
+  Password <input type="text" name="password" ngModel/><br>
+  Email Id <input type="email" name="emailId" ngModel/><br>
+  <input type="submit" value="Add User" />&nbsp;&nbsp;
+  <input type="button" value="Get User" (click)="getAllUsers()"/>
+</form>
+<br><label>{{this.expresponse}}</label><br><br>
+<h2>User Data</h2>
+ 
+<table border="1">
+  <tr>
+    <th>User ID</th>
+    <th>Password</th>
+    <th>Email ID</th>
+    
+  </tr>
+  <tr *ngFor="let user of userList">
+    <td>{{ user.uid }}</td>
+    <td>{{ user.password }}</td>
+    <td>{{ user.emailId }}</td>
+  </tr>
+</table>
+<router-outlet></router-outlet>
+
+-->
+
+<h1 style="background-color: aquamarine;">Angular Express</h1>
+<b>Enter user's data</b><br>
+<form #userData="ngForm" (ngSubmit) = 'addUser(userData)'>
+  User Id &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="uid" ngModel style="background-color: transparent;"/><br>
+  Password <input type="text" name="password" ngModel style="background-color: transparent;"/><br>
+  Email Id &nbsp;&nbsp;<input type="email" name="emailid" ngModel style="background-color: transparent;"/><br><br>
+  <input type="submit" value="Add User" style="background-color:steelblue;"/>&nbsp;&nbsp;
+  <input type="button" value="Get User" (click)="getAllUsers()" style="background-color:steelblue;"/>
+</form>
+<br>
+<label>{{ expresponse }}</label>
+<br><br>
+<h2>User Data</h2>
+
+<table border="1">
+  <tr>
+    <th>User ID</th>
+    <th>Password</th>
+    <th>Email ID</th>
+    <th>Actions</th> <!-- Add a column for actions -->
+  </tr>
+  <tr *ngFor="let user of userList">
+    <td>{{ user.userId }}</td>
+    <td>{{ user.password }}</td>
+    <td>{{ user.emailId }}</td>
+    <td>
+      <!-- Add update and delete buttons for each user -->
+      <button (click)="updateUser">Update</button>
+      <button (click)="deleteUser">Delete</button>
+    </td>
+  </tr>
+</table>
+<router-outlet></router-outlet>
